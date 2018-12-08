@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>React Leason 2</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        #container{
+            padding: 50px;
+            background: #EEEEEE;
+        }
+        
+        .letter{ 
+            padding: 10px;
+            margin: 10px;
+            background: #FFDE00;
+            text-align: center;
+            display: inline-block;
+            font-family: monospace;
+            font-size: 32px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        var destination = document.querySelector("#container");
+        
+        class Letter extends React.Component{
+            render(){
+                return(
+                    <div className="letter">
+                        {this.props.children}
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <div> 
+                <Letter>A</Letter>
+                <Letter>B</Letter>
+                <Letter>C</Letter>
+                <Letter>D</Letter>
+                <Letter>E</Letter>
+                <Letter>F</Letter>
+                <Letter>G</Letter>
+                <Letter>H</Letter>
+                <Letter>I</Letter>
+            </div>,destination
+        )    
+    </script>
+</body>
+</html>

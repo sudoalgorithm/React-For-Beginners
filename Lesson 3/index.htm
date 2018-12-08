@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>React Leason 3</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        #container{
+            padding: 50px;
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+        var destination = document.querySelector("#container");
+        
+        class Square extends React.Component{
+            render(){
+                var squareStyle = {
+                    height: "150px",
+                    backgroundColor: "#FF6663"
+                }
+                return(
+                    <div style={squareStyle}></div>
+                );
+            }
+        }
+
+        class Label extends React.Component{
+            render(){
+                var labelStyle = {
+                    height: "50px",
+                    fontWeight: "bold",
+                    backgroundColor: "FFFFFF",
+                    fontFamily: "sans-serif",
+                    fontSize: "20px",
+                    padding: "13px",
+                    margin: 0
+                }
+                return(
+                    <p style={labelStyle}>#FF6663</p>
+                );
+            }
+        }
+
+        class Card extends React.Component{
+            render(){
+                var cardStyle = {
+                    height: "200px",
+                    width: "150px",
+                    padding: 0,
+                    backgroundColor: "#FFF",
+                    WebkitFilter: "drop-shadow(0px 0px 0px #666)",
+                    filter: "drop-shadow(0px 0px 5px #666)"
+                };
+                return(
+                    <div style={cardStyle}>
+                        <Square/>
+                        <Label/>
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(
+            <div>
+                <Card/>
+            </div>,
+            destination
+        );
+    </script>
+</body>
+</html>
